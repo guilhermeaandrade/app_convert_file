@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import br.com.guilherme.tcc.utils.Constants;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -18,10 +20,12 @@ public class Main {
 
 		try {
 			fileReader = new FileReader(
-					"C:/Users/Guilherme Andrade/Desktop/TestesTCC/data.txt");
+					Constants.FILE_DIRECTORY);
 			lerArq = new BufferedReader(fileReader);
 			
-			csvFile = new File("C:/Users/Guilherme Andrade/Desktop/TestesTCC/saida.csv");
+			csvFile = new File(
+					Constants.FILE_CSV_DIRECTORY);
+			
 			if(csvFile.exists()) {
 				csvFile.delete();
 				csvFile.createNewFile();
